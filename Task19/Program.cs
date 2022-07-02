@@ -98,7 +98,7 @@ namespace HelloWorld
                     Console.WriteLine();
                 }
 
-                else if (digits.Length == 0 || digits.Length == 1)
+                else
                 {
                     Console.WriteLine();
                     Console.WriteLine("The input is incorrect!");
