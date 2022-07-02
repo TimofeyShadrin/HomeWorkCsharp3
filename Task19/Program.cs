@@ -124,7 +124,7 @@ namespace HelloWorld
                     Console.WriteLine();
                 }
 
-                else if (mark == 0 && mark != size / 2)
+                else
                 {
                     Console.WriteLine("Not palindrome");
                     Console.WriteLine();
