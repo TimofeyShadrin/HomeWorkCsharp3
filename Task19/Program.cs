@@ -68,70 +68,70 @@ namespace HelloWorld
                 Console.WriteLine($"{col[count - 1]}");
             }
 
-            try
+
+            Console.Clear();
+            Console.WriteLine("Please, input some-digits integer number: ");
+            string? number = Console.ReadLine();
+            if (!string.IsNullOrEmpty(number))
             {
-                Console.Clear();
-                Console.WriteLine("Please, input some-digits integer number: ");
-                string? number = Console.ReadLine();
-                if (!string.IsNullOrEmpty(number))
+                char[] collection = number.ToString().ToCharArray();
+
+                Console.WriteLine();
+                Console.WriteLine("You have entered the following characters:");
+                Console.WriteLine();
+
+                PrintArrayChar(collection);
+
+                int[] digits = Data(number);
+
+                if (digits.Length != 0)
                 {
-                    char[] collection = number.ToString().ToCharArray();
-
                     Console.WriteLine();
-                    Console.WriteLine("You have entered the following characters:");
+                    Console.WriteLine("It's okay if you made a mistake");
+                    Console.WriteLine("We will choose digits from the one you entered!");
+                    Console.WriteLine("Total your number is: ");
                     Console.WriteLine();
-
-                    PrintArrayChar(collection);
-
-                    int[] digits = Data(number);
-                    
-                    if (digits.Length != 0)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("It's okay if you made a mistake");
-                        Console.WriteLine("We will choose digits from the one you entered!");
-                        Console.WriteLine();
-                        PrintArrayInt(digits);
-                    }
-
-                    int size = digits.Length;
-                    int i = 0;
-                    int mark = 0;
+                    PrintArrayInt(digits);
 
                     Console.WriteLine();
                     Console.WriteLine("And result!");
                     Console.WriteLine();
-
-                    while (i < size / 2)
-                    {
-                        if (digits[i] == digits[size - i - 1])
-                        {
-                            mark++;
-                        }
-                        i++;
-                    }
-
-                    if (mark == size / 2)
-                    {
-                        Console.WriteLine("Palindrome");
-                        Console.WriteLine();
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("Not palindrome");
-                        Console.WriteLine();
-                    }
                 }
 
+                else if (digits.Length == 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Numbers are missing! The input is incorrect!");
+                    Console.WriteLine();
+                }
+
+                int size = digits.Length;
+                int i = 0;
+                int mark = 0;
+
+                while (i < size / 2)
+                {
+                    if (digits[i] == digits[size - i - 1])
+                    {
+                        mark++;
+                    }
+                    i++;
+                }
+
+                if (mark == size / 2 && mark != 0)
+                {
+                    Console.WriteLine("Palindrome");
+                    Console.WriteLine();
+                }
+
+                else if (mark == 0 && mark != size / 2)
+                {
+                    Console.WriteLine("Not palindrome");
+                    Console.WriteLine();
+                }
             }
 
-            catch
-            {
-                Console.WriteLine();
-                Console.WriteLine("Numbers are missing! The input is incorrect");
-                Console.WriteLine();
-            }
         }
+
     }
 }
