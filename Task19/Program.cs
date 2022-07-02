@@ -84,7 +84,7 @@ namespace HelloWorld
 
                 int[] digits = Data(number);
 
-                if (digits.Length != 0)
+                if (digits.Length > 1)
                 {
                     Console.WriteLine();
                     Console.WriteLine("It's okay if you made a mistake");
@@ -98,10 +98,10 @@ namespace HelloWorld
                     Console.WriteLine();
                 }
 
-                else if (digits.Length == 0)
+                else if (digits.Length == 0 || digits.Length == 1)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Numbers are missing! The input is incorrect!");
+                    Console.WriteLine("The input is incorrect!");
                     Console.WriteLine();
                 }
 
@@ -118,16 +118,19 @@ namespace HelloWorld
                     i++;
                 }
 
-                if (mark == size / 2 && mark != 0)
+                if (digits.Length > 1)
                 {
-                    Console.WriteLine("Palindrome");
-                    Console.WriteLine();
-                }
+                    if (mark == size / 2)
+                    {
+                        Console.WriteLine("Palindrome");
+                        Console.WriteLine();
+                    }
 
-                else
-                {
-                    Console.WriteLine("Not palindrome");
-                    Console.WriteLine();
+                    else
+                    {
+                        Console.WriteLine("Not palindrome");
+                        Console.WriteLine();
+                    }
                 }
             }
 
