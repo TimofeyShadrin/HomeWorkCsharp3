@@ -3,7 +3,7 @@
     class Program
     {
         
-        int[] ConvertToIntArray(string[] array)
+        static int[] ConvertToIntArray(string[] array)
             {
                 int[] coordinates = new int[array.Length];
                 for (int i = 0; i < array.Length; i++)
