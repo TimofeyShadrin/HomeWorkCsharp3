@@ -11,9 +11,7 @@ namespace HelloWorld
     class Program
     {
 
-        static void Main(string[] args)
-        {
-            int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
+        int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
             {
                 int[] data = new int[0];
                 int index = 0;
@@ -69,6 +67,8 @@ namespace HelloWorld
             }
 
 
+        static void Main(string[] args)
+        {
             Console.Clear();
             Console.WriteLine("Please, input some-digits integer number: ");
             string? number = Console.ReadLine();
