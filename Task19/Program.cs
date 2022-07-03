@@ -11,7 +11,7 @@ namespace HelloWorld
     class Program
     {
 
-        int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
+        static int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
             {
                 int[] data = new int[0];
                 int index = 0;
@@ -34,7 +34,7 @@ namespace HelloWorld
                 return data;
             }
 
-            void PrintArrayChar(char[] col) // метод для вывода массива в консоль в виде [a, b, c, d, e, f, g, h, i]
+            static void PrintArrayChar(char[] col) // метод для вывода массива в консоль в виде [a, b, c, d, e, f, g, h, i]
             {
                 int count = col.Length;
                 int position = 1;
@@ -50,7 +50,7 @@ namespace HelloWorld
                 Console.WriteLine($" {col[count - 1]}");
             }
 
-            void PrintArrayInt(int[] col) // метод для вывода массива в консоль в виде [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            static void PrintArrayInt(int[] col) // метод для вывода массива в консоль в виде [1, 2, 3, 4, 5, 6, 7, 8, 9]
             {
                 int count = col.Length;
                 int position = 1;
