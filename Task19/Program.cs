@@ -11,7 +11,7 @@ namespace HelloWorld
     class Program
     {
 
-        static int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
+            static int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
             {
                 int[] data = new int[0];
                 int index = 0;
