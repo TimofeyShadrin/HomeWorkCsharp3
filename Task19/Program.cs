@@ -21,15 +21,9 @@ namespace HelloWorld
                 if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9')
                 {
                     index++;
-                    Array.Resize(ref data, index + 1);
+                    Array.Resize(ref data, index);
                     data[index - 1] = Convert.ToInt32(c.ToString());
                 }
-
-                else
-                {
-                    continue;
-                }
-                Array.Resize(ref data, index);
             }
             return data;
         }
