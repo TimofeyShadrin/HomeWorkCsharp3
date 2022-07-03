@@ -28,20 +28,28 @@ namespace HelloWorld
             return data;
         }
 
-        static void PrintArrayChar(char[] col) // метод для вывода массива в консоль в виде [a, b, c, d, e, f, g, h, i]
+        // static void PrintArrayChar(char[] col) // метод для вывода массива в консоль в виде [a, b, c, d, e, f, g, h, i]
+        // {
+        //     int count = col.Length;
+        //     int position = 1;
+
+        //     Console.Write($"{col[0]},");
+
+        //     while (position < count - 1)
+        //     {
+        //         Console.Write($" {col[position]},");
+        //         position++;
+        //     }
+
+        //     Console.WriteLine($" {col[count - 1]}");
+        // }
+        static void PrintArrayChar(char[] col, int count = 0)
         {
-            int count = col.Length;
-            int position = 1;
-
-            Console.Write($"{col[0]},");
-
-            while (position < count - 1)
+            if (count < col.Length)
             {
-                Console.Write($" {col[position]},");
-                position++;
+                Console.Write($" {col[count]}");
+                PrintArrayChar(col, count + 1);
             }
-
-            Console.WriteLine($" {col[count - 1]}");
         }
 
         static void PrintArrayInt(int[] col) // метод для вывода массива в консоль в виде [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -75,6 +83,7 @@ namespace HelloWorld
                 Console.WriteLine();
 
                 PrintArrayChar(collection);
+                Console.WriteLine();
 
                 int[] digits = Data(number);
 
