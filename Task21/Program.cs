@@ -2,6 +2,17 @@
 {
     class Program
     {
+        
+        int[] ConvertToIntArray(string[] array)
+            {
+                int[] coordinates = new int[array.Length];
+                for (int i = 0; i < array.Length; i++)
+                {
+                    coordinates[i] = Convert.ToInt32(array[i].ToString());
+                }
+                return coordinates;
+            }
+            
         static void Main(string[] args)
         {
             // Задача 21
@@ -11,15 +22,7 @@
             // A (3,6,8); B (2,1,-7), -> 15.84
             // A (7,-5, 0); B (1,-1,9) -> 11.53
 
-            int[] ConvertToIntArray(string[] array)
-            {
-                int[] coordinates = new int[array.Length];
-                for (int i = 0; i < array.Length; i++)
-                {
-                    coordinates[i] = Convert.ToInt32(array[i].ToString());
-                }
-                return coordinates;
-            }
+            
             try
             {
                 Console.Clear();
