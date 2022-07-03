@@ -11,60 +11,60 @@ namespace HelloWorld
     class Program
     {
 
-            static int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
+        static int[] Data(string text) //метод для вытягивания цифр из строки и создания из них массива типа int[]
+        {
+            int[] data = new int[0];
+            int index = 0;
+
+            foreach (char c in text)
             {
-                int[] data = new int[0];
-                int index = 0;
-
-                foreach (char c in text)
+                if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9')
                 {
-                    if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9')
-                    {
-                        index++;
-                        Array.Resize(ref data, index + 1);
-                        data[index - 1] = Convert.ToInt32(c.ToString());
-                    }
-
-                    else
-                    {
-                        continue;
-                    }
-                    Array.Resize(ref data, index);
-                }
-                return data;
-            }
-
-            static void PrintArrayChar(char[] col) // метод для вывода массива в консоль в виде [a, b, c, d, e, f, g, h, i]
-            {
-                int count = col.Length;
-                int position = 1;
-
-                Console.Write($"{col[0]},");
-
-                while (position < count - 1)
-                {
-                    Console.Write($" {col[position]},");
-                    position++;
+                    index++;
+                    Array.Resize(ref data, index + 1);
+                    data[index - 1] = Convert.ToInt32(c.ToString());
                 }
 
-                Console.WriteLine($" {col[count - 1]}");
-            }
-
-            static void PrintArrayInt(int[] col) // метод для вывода массива в консоль в виде [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            {
-                int count = col.Length;
-                int position = 1;
-
-                Console.Write($"{col[0]}");
-
-                while (position < count - 1)
+                else
                 {
-                    Console.Write($"{col[position]}");
-                    position++;
+                    continue;
                 }
-
-                Console.WriteLine($"{col[count - 1]}");
+                Array.Resize(ref data, index);
             }
+            return data;
+        }
+
+        static void PrintArrayChar(char[] col) // метод для вывода массива в консоль в виде [a, b, c, d, e, f, g, h, i]
+        {
+            int count = col.Length;
+            int position = 1;
+
+            Console.Write($"{col[0]},");
+
+            while (position < count - 1)
+            {
+                Console.Write($" {col[position]},");
+                position++;
+            }
+
+            Console.WriteLine($" {col[count - 1]}");
+        }
+
+        static void PrintArrayInt(int[] col) // метод для вывода массива в консоль в виде [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        {
+            int count = col.Length;
+            int position = 1;
+
+            Console.Write($"{col[0]}");
+
+            while (position < count - 1)
+            {
+                Console.Write($"{col[position]}");
+                position++;
+            }
+
+            Console.WriteLine($"{col[count - 1]}");
+        }
 
 
         static void Main(string[] args)
